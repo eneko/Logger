@@ -14,16 +14,12 @@ public struct Logger {
         self.outputFile = outputFile
     }
 
-    public func log(_ messages: [String] = []) {
+    public func log(_ messages: [String]) {
         messages.forEach(log)
     }
 
     public func log(_ message: String = "") {
-        _ = outputHandler(indentation + message + .newLine, stdout)
-    }
-
-    public func error(_ message: String = "") {
-        _ = outputHandler(indentation + message + .newLine, stderr)
+        _ = outputHandler(indentation + message + .newLine, outputFile)
     }
 
     // MARK: - Integration

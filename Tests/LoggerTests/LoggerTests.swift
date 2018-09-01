@@ -22,7 +22,18 @@ final class LoggerTests: XCTestCase {
             XCTAssertEqual(file, stderr)
             return 0
         }
-        logger.error("Foo")
+        logger.log("Foo")
+    }
+
+    func testEmpty() {
+        var logger = Logger.standard
+        logger.outputHandler = { bytes, file in
+            let message = String(cString: bytes)
+            XCTAssertEqual(message, "\n")
+            XCTAssertEqual(file, stdout)
+            return 0
+        }
+        logger.log()
     }
 
     func testArray() {
