@@ -109,6 +109,6 @@ final class LoggerTests: XCTestCase {
         ("testIndent", testIndent),
         ("testOutdent", testOutdent),
         ("testIndentationStep", testIndentationStep),
-        ("testIndentedOutput", testIndentedOutput),
+        ("testIndentedOutput", testIndentedOutput)
     ]
 }
